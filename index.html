@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	var d = new Date();
+	var n = d.getHours();
+	alert(n);
+	if (n > 19 || n < 6)
+	  // If time is after 7PM or before 6AM, apply night theme to ‘body’
+	  document.body.className = "night";
+	else if (n > 16 && n < 19)
+	  // If time is between 4PM – 7PM sunset theme to ‘body’
+	  document.body.className = "sunset";
+	else 
+	  // Else use ‘day’ theme
+	  document.body.className = "day";
+});
+
+</script>
+
+<style>
+/*reset*/ h1,h4 {margin:0;}
+
+/* basic styles */
+h1 { margin-bottom: 10px; }
+div { 
+  width: 680px;
+  padding: 10px 25px;
+  margin: 50px auto;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.4); 
+  color: #1F1F1F;
+}
+
+/* backgrounds */
+.day { background: url('http://www.intrawallpaper.com/static/images/background-wallpapers-26_HgdHzBm.jpg'); }
+.sunset { background: url('http://www.intrawallpaper.com/static/images/background-wallpapers-32_NLplhCS.jpg'); }
+.night { background: url('http://www.intrawallpaper.com/static/images/Colorful-Background1_0O14Rlw.jpg'); }
+
+</style>
+
+</head>
+
+<body>
+  <div>
+    <h1>Background based on time of day</h1>
+    <h4>JavaScript applies a CSS class to change the background image based on the time of day of the user's browser.</h4>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
